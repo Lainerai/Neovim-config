@@ -31,6 +31,13 @@ return require('packer').startup(function()
   -- Commentary.
   use 'b3nj5m1n/kommentary'
 
+   -- Git
+  use 'tpope/vim-fugitive'
+  use { 
+        'lewis6991/gitsigns.nvim', 
+        requires = 'nvim-lua/plenary.nvim' 
+  }
+        
   -- A snazzy bufferline for Neovim.
   use {
         'akinsho/bufferline.nvim', 
@@ -40,7 +47,6 @@ return require('packer').startup(function()
 
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
-
 
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   use {
