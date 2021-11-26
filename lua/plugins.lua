@@ -25,8 +25,11 @@ return require('packer').startup(function()
   -- Allows for declaratively configuring, launching, and initializing language servers you have installed on your system.
   use 'neovim/nvim-lspconfig'
 
-  -- Colorscheme Tokyonight
+  -- Colorscheme Tokyonight.
   use 'folke/tokyonight.nvim'
+
+  -- Commentary.
+  use 'b3nj5m1n/kommentary'
 
   -- A snazzy bufferline for Neovim.
   use {
@@ -35,7 +38,7 @@ return require('packer').startup(function()
         config = function() require('bufferline').setup{} end
   }
 
-  -- Helpers for UNIX
+  -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
 
