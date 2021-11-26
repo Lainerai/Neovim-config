@@ -35,6 +35,10 @@ return require('packer').startup(function()
         config = function() require('bufferline').setup{} end
   }
 
+  -- Helpers for UNIX
+  use 'tpope/vim-eunuch'
+
+
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   use {
         'nvim-lualine/lualine.nvim',
