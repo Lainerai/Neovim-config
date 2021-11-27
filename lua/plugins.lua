@@ -40,6 +40,7 @@ return require('packer').startup(function()
       config = function ()
         require('lsp.python')
         require('lsp.html')
+        require('lsp.emmet')
       end
   }
   
@@ -67,7 +68,6 @@ return require('packer').startup(function()
     config = [[require('config.cmp')]],
     event = 'InsertEnter *',
   }
-
 
    -- Git
   use 'tpope/vim-fugitive'
