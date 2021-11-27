@@ -27,7 +27,7 @@ map('n', '<leader>w', '<cmd>w<cr>', { silent = true })
 map('n', '<leader>v', ':CHADopen<cr>', options)
 
 -- Telescope.
-map('n', '<leader>ff', ':Telescope find_files<cr>', options)
+map('n', '<leader>ff', ':Telescope Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<cr>', options)
 map('n', '<leader>fg', ':Telescope live_grep<cr>', options)
-map('n', '<leader>fb', ':Telescope buffers<cr>', options)
+map('n', '<leader>fb', ':Telescope file_browser<cr>', options)
 map('n', '<leader>fh', ':Telescope help_tags<cr>', options)
