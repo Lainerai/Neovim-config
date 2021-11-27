@@ -38,13 +38,8 @@ return require('packer').startup(function()
   use {
       'neovim/nvim-lspconfig',
       config = function ()
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-        require'lspconfig'.pyright.setup{}
-        require'lspconfig'.html.setup{
-          capabilities = capabilities,
-        }
+        require('lsp.python')
+        require('lsp.html')
       end
   }
   
