@@ -48,6 +48,9 @@ return require('packer').startup(function()
       end
   }
 
+  -- Emmet
+  use 'mattn/emmet-vim'
+
    -- Git
   use 'tpope/vim-fugitive'
   use { 
