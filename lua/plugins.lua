@@ -31,32 +31,43 @@ return require('packer').startup(function()
   -- Commentary.
   use 'b3nj5m1n/kommentary'
 
+  -- Helpers for UNIX.
+  use 'tpope/vim-eunuch'
+
+  -- a lua powered greeter like vim-startify / dashboard-nvim
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function ()
+       require'alpha'.setup(require'alpha.themes.startify'.opts)
+    end
+  }
+
+
    -- Git
   use 'tpope/vim-fugitive'
   use { 
-        'lewis6991/gitsigns.nvim', 
-        requires = 'nvim-lua/plenary.nvim',
-        config = function() require('gitsigns').setup() end
+      'lewis6991/gitsigns.nvim', 
+      requires = 'nvim-lua/plenary.nvim',
+      config = function() require('gitsigns').setup() end
   }
         
   -- A snazzy bufferline for Neovim.
   use {
-        'akinsho/bufferline.nvim', 
-        requires = {'kyazdani42/nvim-web-devicons'},
-        config = function() require('bufferline').setup{} end
+      'akinsho/bufferline.nvim', 
+      requires = {'kyazdani42/nvim-web-devicons'},
+      config = function() require('bufferline').setup{} end
   }
-
-  -- Helpers for UNIX.
-  use 'tpope/vim-eunuch'
 
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   use {
-        'nvim-lualine/lualine.nvim',
-        requires = {'kyazdani42/nvim-web-devicons', opt = true},
-    	  config = function() require('lualine').setup{
-          options = {section_separators = '', component_separators = ''}
+      'nvim-lualine/lualine.nvim',
+      requires = {'kyazdani42/nvim-web-devicons', opt = true},
+  	  config = function() require('lualine').setup{
+        options = {section_separators = '', component_separators = ''}
         } end
   }
+
 
 
   -- Packer Bootstrap (Put this at the end after all plugins).
