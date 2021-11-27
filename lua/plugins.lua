@@ -31,14 +31,23 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
-  -- Allows for declaratively configuring, launching, and initializing language servers you have installed on your system.
+  -- Emmet
+  use 'mattn/emmet-vim'
+
+  -- LSP
   use {
       'neovim/nvim-lspconfig',
       config = function ()
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities.textDocument.completion.completionItem.snippetSupport = true
+
         require'lspconfig'.pyright.setup{}
+        require'lspconfig'.html.setup{
+          capabilities = capabilities,
+        }
       end
   }
-
+  
   -- a lua powered greeter like vim-startify / dashboard-nvim
   use {
       'goolord/alpha-nvim',
@@ -48,8 +57,22 @@ return require('packer').startup(function()
       end
   }
 
-  -- Emmet
-  use 'mattn/emmet-vim'
+  -- Completion
+  use 'onsails/lspkind-nvim'
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'L3MON4D3/LuaSnip',
+      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
+      'hrsh7th/cmp-nvim-lsp',
+      { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
+      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
+      { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
+    },
+    config = [[require('config.cmp')]],
+    event = 'InsertEnter *',
+  }
+
 
    -- Git
   use 'tpope/vim-fugitive'
