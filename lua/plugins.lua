@@ -22,9 +22,6 @@ return require('packer').startup(function()
   -- cs'"
   use 'tpope/vim-surround'
 
-  -- Allows for declaratively configuring, launching, and initializing language servers you have installed on your system.
-  use 'neovim/nvim-lspconfig'
-
   -- Colorscheme Tokyonight.
   use 'folke/tokyonight.nvim'
 
@@ -34,41 +31,51 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
-  -- a lua powered greeter like vim-startify / dashboard-nvim
+  -- Allows for declaratively configuring, launching, and initializing language servers you have installed on your system.
   use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function ()
-       require'alpha'.setup(require'alpha.themes.startify'.opts)
-    end
+      'neovim/nvim-lspconfig',
+      config = function ()
+        require'lspconfig'.pyright.setup{}
+      end
   }
 
+  -- a lua powered greeter like vim-startify / dashboard-nvim
+  use {
+      'goolord/alpha-nvim',
+      requires = { 'kyazdani42/nvim-web-devicons' },
+      config = function()
+        require'alpha'.setup(require'alpha.themes.startify'.opts)
+      end
+  }
 
    -- Git
   use 'tpope/vim-fugitive'
   use { 
       'lewis6991/gitsigns.nvim', 
       requires = 'nvim-lua/plenary.nvim',
-      config = function() require('gitsigns').setup() end
+      config = function() 
+        require('gitsigns').setup() 
+      end
   }
         
   -- A snazzy bufferline for Neovim.
   use {
       'akinsho/bufferline.nvim', 
       requires = {'kyazdani42/nvim-web-devicons'},
-      config = function() require('bufferline').setup{} end
+      config = function() 
+        require('bufferline').setup{}
+      end
   }
 
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   use {
       'nvim-lualine/lualine.nvim',
       requires = {'kyazdani42/nvim-web-devicons', opt = true},
-  	  config = function() require('lualine').setup{
-        options = {section_separators = '', component_separators = ''}
-        } end
+  	  config = function() 
+        require('lualine').setup{
+        options = {section_separators = '', component_separators = ''}}
+      end
   }
-
-
 
   -- Packer Bootstrap (Put this at the end after all plugins).
   if packer_bootstrap then
