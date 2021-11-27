@@ -31,9 +31,6 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
-  -- Emmet
-  use 'mattn/emmet-vim'
-
   -- LSP
   use {
       'neovim/nvim-lspconfig',
