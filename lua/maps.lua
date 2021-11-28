@@ -26,8 +26,7 @@ map('n', '<leader>w', '<cmd>w<cr>', { silent = true })
 -- CHADtree.
 map('n', '<leader>v', ':CHADopen<cr>', options)
 
--- Telescope.
-map('n', '<leader>ff', ':Telescope Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<cr>', options)
-map('n', '<leader>fg', ':Telescope live_grep<cr>', options)
-map('n', '<leader>fb', ':Telescope file_browser<cr>', options)
-map('n', '<leader>fh', ':Telescope help_tags<cr>', options)
+-- Git 
+map('n', '<leader>ga', ':Git add .<cr>', options)
+map('n', '<leader>gc', ':Git commit<cr>', options)
+map('n', '<leader>gp', ':Git push<cr>', options)
