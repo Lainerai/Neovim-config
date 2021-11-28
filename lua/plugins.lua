@@ -31,12 +31,6 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
-  -- Find, Filter, Preview, Pick. All lua, all the time.
-  use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
-  }
-
   -- Nvim Treesitter configurations and abstraction layer
   use {
       'nvim-treesitter/nvim-treesitter',
