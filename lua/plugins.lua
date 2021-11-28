@@ -37,6 +37,11 @@ return require('packer').startup(function()
       requires = { {'nvim-lua/plenary.nvim'} }
   }
 
+  -- Nvim Treesitter configurations and abstraction layer
+  use {
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
 
   -- LSP
   use {
