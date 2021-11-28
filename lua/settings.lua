@@ -14,6 +14,7 @@ o.smartcase = true            -- Automatically switch search to case-sensitive w
 o.shiftwidth = 2              -- When shifting, indent using four spaces.
 o.cursorline = true           -- Highlight the current line
 o.clipboard = 'unnamedplus'   -- Use system clipboard
+o.smartindent = true
 o.updatetime = 300
 o.foldlevelstart = 99
 o.tabstop = 2 
