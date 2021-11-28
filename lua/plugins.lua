@@ -56,20 +56,13 @@ return require('packer').startup(function()
   }
 
   -- Completion
-  use 'onsails/lspkind-nvim'
   use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'L3MON4D3/LuaSnip',
-      { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' },
-      'hrsh7th/cmp-nvim-lsp',
-      { 'hrsh7th/cmp-path', after = 'nvim-cmp' },
-      { 'hrsh7th/cmp-nvim-lua', after = 'nvim-cmp' },
-      { 'saadparwaiz1/cmp_luasnip', after = 'nvim-cmp' },
-    },
-    config = [[require('config.cmp')]],
-    event = 'InsertEnter *',
+      'ms-jpq/coq_nvim',
+      branch = 'coq',
+      event = "VimEnter",
+      config = 'vim.cmd[[COQnow]]'
   }
+  use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
    -- Git
   use 'tpope/vim-fugitive'
