@@ -59,7 +59,9 @@ return require('packer').startup(function()
   use {
       'goolord/alpha-nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
-      config = [[require('config.alpha')]]
+      config = function ()
+          require'alpha'.setup(require'alpha.themes.dashboard'.opts)
+      end
   }
 
   -- Completion
