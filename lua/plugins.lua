@@ -96,10 +96,20 @@ return require('packer').startup(function()
       end
   }
 
+  -- Telescope
   use {
       'nvim-telescope/telescope.nvim',
       requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use {
+      "nvim-telescope/telescope-frecency.nvim",
+       config = function()
+           require"telescope".load_extension("frecency")
+       end,
+       requires = {"tami5/sqlite.lua"}
+  }
+
+
 
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   use {
