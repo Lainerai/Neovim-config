@@ -13,6 +13,9 @@ return require('packer').startup(function()
   -- File manager for Neovim, better than NERDtree.
   use 'ms-jpq/chadtree'
 
+  -- The misssing motion for vim.
+  use 'justinmk/vim-sneak'
+
   -- Adds indentation guides to all lines (including empty lines).
   use 'lukas-reineke/indent-blankline.nvim'
 
