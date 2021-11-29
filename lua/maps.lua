@@ -39,3 +39,4 @@ map('n', '<leader>ff', [[<cmd>Telescope find_files theme=get_dropdown<cr>]], sil
 map('n', '<leader>fl', [[<cmd>Telescope live_grep theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fk', [[<cmd>Telescope keymaps theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fc', [[<cmd>Telescope commands theme=get_dropdown<cr>]], silent)
+map('n', '<leader>fs', [[<cmd>Telescope colorscheme theme=get_dropdown<cr>]], silent)
