@@ -66,8 +66,7 @@ return require('packer').startup(function()
   use {
       'ms-jpq/coq_nvim',
       branch = 'coq',
-      event = "VimEnter",
-      config = 'vim.cmd[[COQnow --shut-up]]'
+      config = [[require('config.coq')]]
   }
   use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
