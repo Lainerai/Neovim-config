@@ -27,6 +27,7 @@ map('n', '<leader>w', '<cmd>w<cr>', silent)
 map('n', '<leader>v', ':CHADopen<cr>', options)
 
 -- Git 
+map('n', '<leader>g', ':Neogit<cr>', options)
 map('n', '<leader>ga', ':Git add .<cr>', options)
 map('n', '<leader>gc', ':Git commit<cr>', options)
 map('n', '<leader>gp', ':Git push<cr>', options)
