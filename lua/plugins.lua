@@ -16,12 +16,6 @@ return require('packer').startup(function()
   -- The misssing motion for vim.
   use 'justinmk/vim-sneak'
 
-  -- Adds indentation guides to all lines (including empty lines).
-  use {
-      'lukas-reineke/indent-blankline.nvim',
-      config = [[require('config.indentblankline')]]
-  }
-
   -- Emmet for nvim.
   use 'mattn/emmet-vim'
 
@@ -39,6 +33,12 @@ return require('packer').startup(function()
 
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
+
+  -- Adds indentation guides to all lines (including empty lines).
+  use {
+      'lukas-reineke/indent-blankline.nvim',
+      config = [[require('config.indentblankline')]]
+  }
 
   -- Nvim Treesitter configurations and abstraction layer
   use {
@@ -94,6 +94,11 @@ return require('packer').startup(function()
       config = function() 
         require('bufferline').setup{}
       end
+  }
+
+  use {
+      'nvim-telescope/telescope.nvim',
+      requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
