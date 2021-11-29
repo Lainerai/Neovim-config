@@ -21,7 +21,7 @@ map('n', '<leader>x', '<cmd>x!<cr>', silent)
 map('n', '<leader>d', '<cmd>Sayonara<cr>', { silent = true, nowait = true })
 
 -- Save buffer.
-map('n', '<leader>w', '<cmd>w<cr>', { silent = true })
+map('n', '<leader>w', '<cmd>w<cr>', silent)
 
 -- CHADtree.
 map('n', '<leader>v', ':CHADopen<cr>', options)
@@ -30,3 +30,10 @@ map('n', '<leader>v', ':CHADopen<cr>', options)
 map('n', '<leader>ga', ':Git add .<cr>', options)
 map('n', '<leader>gc', ':Git commit<cr>', options)
 map('n', '<leader>gp', ':Git push<cr>', options)
+
+-- telescope
+map('n', '<leader>fb', [[<cmd>Telescope buffers show_all_buffers=true theme=get_dropdown<cr>]], silent)
+map('n', '<leader>fr', [[<cmd>Telescope frecency theme=get_dropdown<cr>]], silent)
+map('n', '<leader>fg', [[<cmd>Telescope git_files theme=get_dropdown<cr>]], silent)
+map('n', '<leader>ff', [[<cmd>Telescope find_files theme=get_dropdown<cr>]], silent)
+map('n', '<leader>fl', [[<cmd>Telescope live_grep theme=get_dropdown<cr>]], silent)
