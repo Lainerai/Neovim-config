@@ -16,6 +16,9 @@ return require('packer').startup(function()
   -- Adds indentation guides to all lines (including empty lines).
   use 'lukas-reineke/indent-blankline.nvim'
 
+  -- Emmet for nvim.
+  use 'mattn/emmet-vim'
+
   -- Provides a single command that deletes the current buffer and handles the current window in a smart way.
   use 'mhinz/vim-sayonara' 
 
