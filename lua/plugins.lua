@@ -34,6 +34,13 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
+  use {
+      'windwp/nvim-autopairs',
+      config = function()
+        require('nvim-autopairs').setup{}
+      end
+  }
+
   -- Adds indentation guides to all lines (including empty lines).
   use {
       'lukas-reineke/indent-blankline.nvim',
@@ -83,7 +90,7 @@ return require('packer').startup(function()
       config =  [[require('config.neogit')]]
     }
   }
-        
+
   -- A snazzy bufferline for Neovim.
   use {
       'akinsho/bufferline.nvim', 
@@ -105,8 +112,6 @@ return require('packer').startup(function()
        end,
        requires = {"tami5/sqlite.lua"}
   }
-
-
 
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   use {
