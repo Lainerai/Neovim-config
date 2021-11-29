@@ -34,14 +34,6 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
-  -- Autopairs.
-  use {
-      'windwp/nvim-autopairs',
-      config = function()
-        require('nvim-autopairs').setup{}
-      end
-  }
-
   -- Adds indentation guides to all lines (including empty lines).
   use {
       'lukas-reineke/indent-blankline.nvim',
