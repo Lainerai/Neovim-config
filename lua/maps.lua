@@ -32,8 +32,10 @@ map('n', '<leader>gc', ':Git commit<cr>', options)
 map('n', '<leader>gp', ':Git push<cr>', options)
 
 -- telescope
-map('n', '<leader>fb', [[<cmd>Telescope buffers show_all_buffers=true theme=get_dropdown<cr>]], silent)
+map('n', '<leader>fb', [[<cmd>Telescope file_browser theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fr', [[<cmd>Telescope frecency theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fg', [[<cmd>Telescope git_files theme=get_dropdown<cr>]], silent)
 map('n', '<leader>ff', [[<cmd>Telescope find_files theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fl', [[<cmd>Telescope live_grep theme=get_dropdown<cr>]], silent)
+map('n', '<leader>fk', [[<cmd>Telescope keymaps theme=get_dropdown<cr>]], silent)
+map('n', '<leader>fc', [[<cmd>Telescope commands theme=get_dropdown<cr>]], silent)
