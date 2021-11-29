@@ -14,7 +14,7 @@ dashboard.section.buttons.val = {
     dashboard.button( "SPC f r", "ﲊ  Frecency/MRU" , ":Telescope frecency<CR>"),
     dashboard.button( "SPC f b", "  File Browser" , ":Telescope file_browser<CR>"),
     dashboard.button( "SPC g", "  Neogit" , ":Neogit<CR>"),
-    dashboard.button( "SPC c", "  Edit Config" , ":e ~/.config/nvim/init.lua<CR>"),
+    dashboard.button( "SPC c", "  Edit Config" , ':lua telescope_find_files_in_path("~/.config/nvim/")<CR>'),
     dashboard.button( "q", "  Quit NVIM" , ":qa<CR>"),
 }
 local handle = io.popen('fortune')

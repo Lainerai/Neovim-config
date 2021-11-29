@@ -34,6 +34,7 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
+  -- Autopairs.
   use {
       'windwp/nvim-autopairs',
       config = function()
@@ -75,7 +76,7 @@ return require('packer').startup(function()
       branch = 'coq',
       config = [[require('config.coq')]]
   }
-  use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+  -- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
    -- Git
   use 'tpope/vim-fugitive'
@@ -103,6 +104,7 @@ return require('packer').startup(function()
   -- Telescope
   use {
       'nvim-telescope/telescope.nvim',
+      config = [[require('config.telescope')]],
       requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {

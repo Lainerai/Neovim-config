@@ -10,10 +10,8 @@ map('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
 -- Navigating.
-map('n', '<leader>n', ':bnext<cr>', options)
-map('n', '<leader>p', ':bprev<cr>', options)
-map('n', '<C-h>', '<C-w>h', options)
-map('n', '<C-l>', '<C-w>l', options)
+map('n', '<leader>l', ':bnext<cr>', options)
+map('n', '<leader>h', ':bprev<cr>', options)
 
 -- Quit, close buffers, etc.
 map('n', '<leader>q', '<cmd>qa<cr>', silent)
@@ -32,6 +30,8 @@ map('n', '<leader>gc', ':Git commit<cr>', options)
 map('n', '<leader>gp', ':Git push<cr>', options)
 
 -- telescope
+map('n', '<leader>p', ':lua telescope_find_files_in_path("/mnt/d/Pretender/Documents/Projects/")<CR>', silent)
+map('n', '<leader>c', ':lua telescope_find_files_in_path("~/.config/nvim/")<CR>', silent)
 map('n', '<leader>fb', [[<cmd>Telescope file_browser theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fr', [[<cmd>Telescope frecency theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fg', [[<cmd>Telescope git_files theme=get_dropdown<cr>]], silent)
