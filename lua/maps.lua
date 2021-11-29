@@ -10,8 +10,8 @@ map('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
 -- Navigating.
-map('n', '<leader>l', ':bnext<cr>', options)
-map('n', '<leader>h', ':bprev<cr>', options)
+map('n', '<Tab>', ":bnext<CR>", silent)
+map('n', '<S-Tab>', ":bprevious<CR>", silent)
 
 -- Quit, close buffers, etc.
 map('n', '<leader>q', '<cmd>qa<cr>', silent)
