@@ -17,7 +17,10 @@ return require('packer').startup(function()
   use 'justinmk/vim-sneak'
 
   -- Adds indentation guides to all lines (including empty lines).
-  use 'lukas-reineke/indent-blankline.nvim'
+  use {
+      'lukas-reineke/indent-blankline.nvim',
+      config = [[require('config.indentblankline')]]
+  }
 
   -- Emmet for nvim.
   use 'mattn/emmet-vim'
