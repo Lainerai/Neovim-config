@@ -10,8 +10,8 @@ map('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
 -- Navigating.
-map('n', '<Tab>', ":bnext<CR>", silent)
-map('n', '<S-Tab>', ":bprevious<CR>", silent)
+map('n', '<leader>bl', ":bnext<CR>", silent)
+map('n', '<leader>bh', ":bprevious<CR>", silent)
 
 -- Quit, close buffers, etc.
 map('n', '<leader>q', '<cmd>qa<cr>', silent)
@@ -22,7 +22,7 @@ map('n', '<leader>d', '<cmd>Sayonara<cr>', { silent = true, nowait = true })
 map('n', '<leader>w', '<cmd>w<cr>', silent)
 
 -- CHADtree.
-map('n', '<leader>e', ':CHADopen<cr>', options)
+map('n', '<leader>e', ':NvimTreeToggle<cr>', options)
 
 -- Git 
 map('n', '<leader>ga', ':Neogit<cr>', options)

@@ -10,9 +10,6 @@ return require('packer').startup(function()
   -- Packer can manage itself.
   use 'wbthomason/packer.nvim'
 
-  -- File manager for Neovim, better than NERDtree.
-  use 'ms-jpq/chadtree'
-
   -- The misssing motion for vim.
   use 'justinmk/vim-sneak'
 
@@ -25,16 +22,24 @@ return require('packer').startup(function()
   -- cs'"
   use 'tpope/vim-surround'
 
-
   -- Commentary.
   use 'b3nj5m1n/kommentary'
 
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
+  -- File Explorer
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = [[require('config.nvimtree')]]
+}
+
   -- Colorizer
   use {
-      'norcalli/nvim-colorizer.lua', 
+      'norcalli/nvim-colorizer.lua',
       config = function()
           require'colorizer'.setup()
         end
@@ -59,8 +64,7 @@ return require('packer').startup(function()
         require('lsp.python')
         require('lsp.html')
       end
-  } 
-  
+  }
   -- A lua powered greeter like vim-startify / dashboard-nvim
   use {
       'goolord/alpha-nvim',
@@ -68,7 +72,6 @@ return require('packer').startup(function()
       config = [[require('config.alpha')]]
   }
 
-  
   -- Completion
   use {
       'ms-jpq/coq_nvim',
@@ -81,11 +84,11 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use { 
     { 
-      'lewis6991/gitsigns.nvim', 
+      'lewis6991/gitsigns.nvim',
       requires = 'nvim-lua/plenary.nvim',
       config = [[require('config.gitsigns')]]
     },
-    { 'TimUntersberger/neogit', 
+    { 'TimUntersberger/neogit',
       cmd = 'Neogit',
       config =  [[require('config.neogit')]]
     }
@@ -93,7 +96,7 @@ return require('packer').startup(function()
 
   -- A snazzy bufferline for Neovim.
   use {
-      'akinsho/bufferline.nvim', 
+      'akinsho/bufferline.nvim',
       requires = {'kyazdani42/nvim-web-devicons'},
       config = function() 
         require('bufferline').setup{}
@@ -127,7 +130,6 @@ return require('packer').startup(function()
         'folke/tokyonight.nvim',
         'navarasu/onedark.nvim',
   }
-
 
   -- Packer Bootstrap (Put this at the end after all plugins).
   if packer_bootstrap then
