@@ -21,8 +21,9 @@ map('n', '<leader>d', '<cmd>Sayonara<cr>', { silent = true, nowait = true })
 -- Save buffer.
 map('n', '<leader>w', '<cmd>w<cr>', silent)
 
--- CHADtree.
+-- File explorer.
 map('n', '<leader>e', ':NvimTreeToggle<cr>', options)
+map('n', '<leader>v', ':NvimTreeFocus<cr>', options)
 
 -- Git.
 map('n', '<leader>ga', ':Neogit<cr>', options)

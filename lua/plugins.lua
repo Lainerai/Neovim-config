@@ -13,9 +13,6 @@ return require('packer').startup(function()
   -- The misssing motion for vim.
   use 'justinmk/vim-sneak'
 
-  --[[ -- Emmet for nvim.
-  use 'mattn/emmet-vim' ]]
-
   -- Provides a single command that deletes the current buffer and handles the current window in a smart way.
   use 'mhinz/vim-sayonara' 
 
@@ -28,17 +25,19 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
-  -- Faster version of filetype.vim
-  use 'nathom/filetype.nvim'
-
-  -- File Explorer
+  -- Nvim Treesitter configurations and abstraction layer
   use {
-    'kyazdani42/nvim-tree.lua',
-    requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icon
-    },
-    config = [[require('config.nvimtree')]]
-}
+      'nvim-treesitter/nvim-treesitter',
+      run = ':TSUpdate'
+  }
+
+  -- Statusline
+  use {
+      'famiu/feline.nvim',
+      config = function()
+        require('feline').setup()
+      end
+  }
 
   -- Colorizer
   use {
@@ -48,26 +47,42 @@ return require('packer').startup(function()
         end
   }
 
+  -- A snazzy bufferline for Neovim.
+  use {
+      'akinsho/bufferline.nvim',
+      requires = {'kyazdani42/nvim-web-devicons'},
+      config = function() 
+        require('bufferline').setup()
+      end
+  }
+
+  -- File Explorer
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {
+      'kyazdani42/nvim-web-devicons', -- optional, for file icon
+    },
+    config = [[require('config.nvimtree')]]
+  }
+  -- use { 'ms-jpq/chadtree', branch = 'chad'}
+
+
   -- Adds indentation guides to all lines (including empty lines).
   use {
       'lukas-reineke/indent-blankline.nvim',
       config = [[require('config.indentblankline')]]
   }
 
-  -- Nvim Treesitter configurations and abstraction layer
-  use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
-  }
-
   -- LSP
   use {
       'neovim/nvim-lspconfig',
-      config = function ()
-        require('lsp.python')
-        require('lsp.html')
+            config = function ()
+        require('config.lsp.python')
+        require('config.lsp.html')
+        require('config.lsp.emmet')
       end
   }
+
   -- A lua powered greeter like vim-startify / dashboard-nvim
   use {
       'goolord/alpha-nvim',
@@ -75,15 +90,15 @@ return require('packer').startup(function()
       config = [[require('config.alpha')]]
   }
 
-  -- Completion
   use {
       'ms-jpq/coq_nvim',
       branch = 'coq',
       config = [[require('config.coq')]]
-  }
-  -- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+  } 
+  use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
-   -- Git
+
+  -- Git
   use 'tpope/vim-fugitive'
   use { 
     { 
@@ -97,15 +112,6 @@ return require('packer').startup(function()
     }
   }
 
-  -- A snazzy bufferline for Neovim.
-  use {
-      'akinsho/bufferline.nvim',
-      requires = {'kyazdani42/nvim-web-devicons'},
-      config = function() 
-        require('bufferline').setup{}
-      end
-  }
-
   -- Telescope
   use {
       'nvim-telescope/telescope.nvim',
@@ -113,20 +119,13 @@ return require('packer').startup(function()
       requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {
-      "nvim-telescope/telescope-frecency.nvim",
+      'nvim-telescope/telescope-frecency.nvim',
        config = function()
-           require"telescope".load_extension("frecency")
+           require'telescope'.load_extension('frecency')
        end,
-       requires = {"tami5/sqlite.lua"}
+       requires = {'tami5/sqlite.lua'}
   }
 
-  -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
-  use {
-      'famiu/feline.nvim',
-      config = function()
-        require('feline').setup()
-      end
-  }
 
   -- Colorscheme 
   use { 
