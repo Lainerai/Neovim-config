@@ -28,6 +28,9 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
+  -- Faster version of filetype.vim
+  use 'nathom/filetype.nvim'
+
   -- File Explorer
   use {
     'kyazdani42/nvim-tree.lua',
