@@ -16,8 +16,8 @@ return require('packer').startup(function()
   -- The misssing motion for vim.
   use 'justinmk/vim-sneak'
 
-  -- Emmet for nvim.
-  use 'mattn/emmet-vim'
+  --[[ -- Emmet for nvim.
+  use 'mattn/emmet-vim' ]]
 
   -- Provides a single command that deletes the current buffer and handles the current window in a smart way.
   use 'mhinz/vim-sayonara' 
@@ -34,10 +34,17 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
-  -- Notifications
+  -- Smart as VSCODE
   use {
-      'rcarriga/nvim-notify',
-      config = [[require('config.notify')]]
+      'neoclide/coc.nvim', branch = 'release',
+  }
+
+  -- Colorizer
+  use {
+      'norcalli/nvim-colorizer.lua', 
+      config = function()
+          require'colorizer'.setup()
+        end
   }
 
   -- Adds indentation guides to all lines (including empty lines).
@@ -53,28 +60,29 @@ return require('packer').startup(function()
   }
 
   -- LSP
-  use {
+  --[[ use {
       'neovim/nvim-lspconfig',
       config = function ()
         require('lsp.python')
         require('lsp.html')
       end
-  }
+  } ]]
   
-  -- a lua powered greeter like vim-startify / dashboard-nvim
+  -- A lua powered greeter like vim-startify / dashboard-nvim
   use {
       'goolord/alpha-nvim',
       requires = { 'kyazdani42/nvim-web-devicons' },
       config = [[require('config.alpha')]]
   }
 
+  
   -- Completion
-  use {
+  --[[ use {
       'ms-jpq/coq_nvim',
       branch = 'coq',
-      config = [[require('config.coq')]]
+      config = [[require('config.coq')
   }
-  -- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
+  use {'ms-jpq/coq.artifacts', branch = 'artifacts'} ]]
 
    -- Git
   use 'tpope/vim-fugitive'
