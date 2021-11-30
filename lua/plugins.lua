@@ -25,19 +25,12 @@ return require('packer').startup(function()
   -- cs'"
   use 'tpope/vim-surround'
 
-  -- Colorscheme Tokyonight.
-  use 'folke/tokyonight.nvim'
 
   -- Commentary.
   use 'b3nj5m1n/kommentary'
 
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
-
-  -- Smart as VSCODE
-  use {
-      'neoclide/coc.nvim', branch = 'release',
-  }
 
   -- Colorizer
   use {
@@ -60,13 +53,13 @@ return require('packer').startup(function()
   }
 
   -- LSP
-  --[[ use {
+  use {
       'neovim/nvim-lspconfig',
       config = function ()
         require('lsp.python')
         require('lsp.html')
       end
-  } ]]
+  } 
   
   -- A lua powered greeter like vim-startify / dashboard-nvim
   use {
@@ -77,12 +70,12 @@ return require('packer').startup(function()
 
   
   -- Completion
-  --[[ use {
+  use {
       'ms-jpq/coq_nvim',
       branch = 'coq',
-      config = [[require('config.coq')
+      config = [[require('config.coq')]]
   }
-  use {'ms-jpq/coq.artifacts', branch = 'artifacts'} ]]
+  -- use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
    -- Git
   use 'tpope/vim-fugitive'
@@ -130,6 +123,13 @@ return require('packer').startup(function()
         options = {section_separators = '', component_separators = ''}}
       end
   }
+
+  -- Colorscheme 
+  use {
+      'folke/tokyonight.nvim',
+      config = [[require('config.tokyonight')]]
+  }
+
 
   -- Packer Bootstrap (Put this at the end after all plugins).
   if packer_bootstrap then
