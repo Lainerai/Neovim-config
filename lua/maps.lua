@@ -22,12 +22,15 @@ map('n', '<leader>d', '<cmd>Sayonara<cr>', { silent = true, nowait = true })
 map('n', '<leader>w', '<cmd>w<cr>', silent)
 
 -- CHADtree.
-map('n', '<leader>v', ':CHADopen<cr>', options)
+map('n', '<leader>e', ':CHADopen<cr>', options)
 
 -- Git 
 map('n', '<leader>ga', ':Neogit<cr>', options)
 map('n', '<leader>gc', ':Git commit<cr>', options)
 map('n', '<leader>gp', ':Git push<cr>', options)
+
+-- Packer
+map('n', '<leader>u', ':PackerSync<cr>', options)
 
 -- telescope
 map('n', '<leader>p', ':lua telescope_find_files_in_path("/mnt/d/Pretender/Documents/Projects/")<CR>', silent)

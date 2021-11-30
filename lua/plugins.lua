@@ -123,9 +123,9 @@ return require('packer').startup(function()
   }
 
   -- Colorscheme 
-  use {
-      'folke/tokyonight.nvim',
-      config = [[require('config.tokyonight')]]
+  use { 
+        'folke/tokyonight.nvim',
+        'navarasu/onedark.nvim',
   }
 
 

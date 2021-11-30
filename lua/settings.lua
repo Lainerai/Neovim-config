@@ -30,5 +30,8 @@ o.foldexpr = "nvim_treesitter#foldexpr()"
 o.termguicolors = true    
 -- vim.opt.characters for after foldtext, eof, foldcolumn
 vim.opt.fillchars = "fold: ,foldclose:,foldopen:,foldsep: ,diff: ,eob: "
--- Load the colorscheme.
+
+require[[config.themes.tokyonight]]
+require[[config.themes.onedark]]
+
 cmd "colorscheme tokyonight"
