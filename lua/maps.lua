@@ -24,15 +24,15 @@ map('n', '<leader>w', '<cmd>w<cr>', silent)
 -- CHADtree.
 map('n', '<leader>e', ':NvimTreeToggle<cr>', options)
 
--- Git 
+-- Git.
 map('n', '<leader>ga', ':Neogit<cr>', options)
 map('n', '<leader>gc', ':Git commit<cr>', options)
 map('n', '<leader>gp', ':Git push<cr>', options)
 
--- Packer
+-- Packer.
 map('n', '<leader>u', ':PackerSync<cr>', options)
 
--- telescope
+-- telescope.
 map('n', '<leader>p', ':lua telescope_find_files_in_path("/mnt/d/Pretender/Documents/Projects/")<CR>', silent)
 map('n', '<leader>c', ':lua telescope_find_files_in_path("~/.config/nvim/")<CR>', silent)
 map('n', '<leader>fb', [[<cmd>Telescope file_browser theme=get_dropdown<cr>]], silent)
