@@ -116,11 +116,9 @@ return require('packer').startup(function()
 
   -- A blazing fast and easy to configure neovim statusline plugin written in pure lua.
   use {
-      'nvim-lualine/lualine.nvim',
-      requires = {'kyazdani42/nvim-web-devicons', opt = true},
-  	  config = function() 
-        require('lualine').setup{
-        options = {section_separators = '', component_separators = ''}}
+      'famiu/feline.nvim',
+      config = function()
+        require('feline').setup()
       end
   }
 
