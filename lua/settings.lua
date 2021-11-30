@@ -31,6 +31,9 @@ o.termguicolors = true
 -- vim.opt.characters for after foldtext, eof, foldcolumn
 vim.opt.fillchars = "fold: ,foldclose:,foldopen:,foldsep: ,diff: ,eob: "
 
+-- Do not source the default filetype.vim
+g.did_load_filetypes = 1 
+
 require[[config.themes.tokyonight]]
 require[[config.themes.onedark]]
 
