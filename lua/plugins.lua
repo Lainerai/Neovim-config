@@ -51,9 +51,7 @@ return require('packer').startup(function()
   use {
       'akinsho/bufferline.nvim',
       requires = {'kyazdani42/nvim-web-devicons'},
-      config = function() 
-        require('bufferline').setup()
-      end
+      config = [[require('config.bufferline')]]
   }
 
   -- File Explorer
@@ -64,7 +62,6 @@ return require('packer').startup(function()
     },
     config = [[require('config.nvimtree')]]
   }
-  -- use { 'ms-jpq/chadtree', branch = 'chad'}
 
 
   -- Adds indentation guides to all lines (including empty lines).
@@ -89,14 +86,6 @@ return require('packer').startup(function()
       requires = { 'kyazdani42/nvim-web-devicons' },
       config = [[require('config.alpha')]]
   }
-
-  use {
-      'ms-jpq/coq_nvim',
-      branch = 'coq',
-      config = [[require('config.coq')]]
-  } 
-  use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
-
 
   -- Git
   use 'tpope/vim-fugitive'
@@ -125,7 +114,6 @@ return require('packer').startup(function()
        end,
        requires = {'tami5/sqlite.lua'}
   }
-
 
   -- Colorscheme 
   use { 
