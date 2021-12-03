@@ -10,16 +10,23 @@ map('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
 -- Navigating.
+--- Buffer
 map('n', '<leader>bl', ":bnext<CR>", silent)
 map('n', '<leader>bh', ":bprevious<CR>", silent)
+
+--- Window
+map('n', '<C-h>', '<C-w>h', silent)
+map('n', '<C-l>', '<C-w>l', silent)
+map('n', '<C-j>', '<C-w>j', silent)
+map('n', '<C-k>', '<C-w>k', silent)
+
+-- Save buffer.
+map('n', '<leader>w', '<cmd>w<cr>', silent)
 
 -- Quit, close buffers, etc.
 map('n', '<leader>q', '<cmd>qa<cr>', silent)
 map('n', '<leader>x', '<cmd>x!<cr>', silent)
 map('n', '<leader>d', '<cmd>Sayonara<cr>', { silent = true, nowait = true })
-
--- Save buffer.
-map('n', '<leader>w', '<cmd>w<cr>', silent)
 
 -- File explorer.
 map('n', '<leader>e', ':NvimTreeToggle<cr>', options)
