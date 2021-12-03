@@ -10,8 +10,8 @@ return require('packer').startup(function()
   -- Packer can manage itself.
   use 'wbthomason/packer.nvim'
 
-  -- The misssing motion for vim.
-  use 'justinmk/vim-sneak'
+  -- Vim sneak successor
+  use 'ggandor/lightspeed.nvim'
 
   -- Provides a single command that deletes the current buffer and handles the current window in a smart way.
   use 'mhinz/vim-sayonara' 
