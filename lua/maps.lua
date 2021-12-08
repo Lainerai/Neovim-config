@@ -1,6 +1,5 @@
 local cmd = vim.cmd
 local map = vim.api.nvim_set_keymap
-local M = {}
 
 local options = { noremap = true, silent = true }
 local silent = { silent = true }

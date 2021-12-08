@@ -28,7 +28,8 @@ return require('packer').startup(function()
   -- Nvim Treesitter configurations and abstraction layer
   use {
       'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
+      run = ':TSUpdate',
+      config = [[ require('config.treesitter') ]]
   }
 
   -- Statusline
@@ -54,6 +55,12 @@ return require('packer').startup(function()
       config = [[require('config.bufferline')]]
   }
 
+-- A super powerful autopairs for Neovim. It support multiple character.
+  use { 
+       'windwp/nvim-autopairs',
+       config = [[ require('config.autopairs') ]]
+  }
+
   -- File Explorer
   use {
     'kyazdani42/nvim-tree.lua',
@@ -62,7 +69,6 @@ return require('packer').startup(function()
     },
     config = [[require('config.nvimtree')]]
   }
-
 
   -- Adds indentation guides to all lines (including empty lines).
   use {
@@ -73,11 +79,38 @@ return require('packer').startup(function()
   -- LSP
   use {
       'neovim/nvim-lspconfig',
-            config = function ()
-        require('config.lsp.python')
-        require('config.lsp.html')
-        require('config.lsp.emmet')
-      end
+      config = [[ require('config.lsp.lspconfig') ]],
+      requires = {
+        {'williamboman/nvim-lsp-installer',
+         config = [[ require('config.lsp.lsp_installer') ]]
+        },
+        {'onsails/lspkind-nvim',
+        config = [[ require('config.lsp.lspkind') ]]
+        },
+        {'nvim-lua/lsp-status.nvim',
+         config = [[ require('config.lsp.lspstatus') ]]
+        }
+      }
+  }
+
+  use { -- A completion plugin for neovim coded in Lua.
+        'hrsh7th/nvim-cmp',
+        requires = {
+          "hrsh7th/cmp-nvim-lsp",           -- nvim-cmp source for neovim builtin LSP client
+          "hrsh7th/cmp-nvim-lua",           -- nvim-cmp source for nvim lua
+          "hrsh7th/cmp-buffer",             -- nvim-cmp source for buffer words.
+          "hrsh7th/cmp-path",               -- nvim-cmp source for filesystem paths.
+          "hrsh7th/cmp-calc",               -- nvim-cmp source for math calculation.
+          "saadparwaiz1/cmp_luasnip",       -- luasnip completion source for nvim-cmp
+        },
+        config = [[ require('config.cmp') ]],
+  }
+  use { -- Snippet Engine for Neovim written in Lua.
+        'L3MON4D3/LuaSnip',
+        requires = {
+          "rafamadriz/friendly-snippets",   -- Snippets collection for a set of different programming languages for faster development.
+        },
+        config = [[ require('config.luasnip') ]],
   }
 
   -- A lua powered greeter like vim-startify / dashboard-nvim
