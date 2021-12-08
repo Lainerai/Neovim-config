@@ -1,4 +1,4 @@
 require("indent_blankline").setup {
-    buftype_exclude = {'terminal'}, 
-    filetype_exclude = {'NvimTree', 'alpha'}
+    buftype_exclude = {'terminal', 'nofile'}, 
+    filetype_exclude = {'NvimTree', 'alpha', 'packer'}
 }

@@ -25,6 +25,9 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
+  -- Live edit
+  use 'turbio/bracey.vim'
+
   -- Nvim Treesitter configurations and abstraction layer
   use {
       'nvim-treesitter/nvim-treesitter',

@@ -1,5 +1,6 @@
 local cmd = vim.cmd
 local map = vim.api.nvim_set_keymap
+local M = {}
 
 local options = { noremap = true, silent = true }
 local silent = { silent = true }
@@ -8,16 +9,18 @@ local silent = { silent = true }
 map('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
+-- Make Y key yank to end of line
+map('n', 'Y', 'y$', { noremap = true  })
+
 -- Navigating.
 --- Buffer
 map('n', '<leader>bl', ":bnext<CR>", silent)
 map('n', '<leader>bh', ":bprevious<CR>", silent)
-
 --- Window
-map('n', '<C-h>', '<C-w>h', silent)
-map('n', '<C-l>', '<C-w>l', silent)
-map('n', '<C-j>', '<C-w>j', silent)
 map('n', '<C-k>', '<C-w>k', silent)
+map('n', '<C-j>', '<C-w>j', silent)
+map('n', '<C-l>', '<C-w>l', silent)
+map('n', '<C-h>', '<C-w>h', silent)
 
 -- Save buffer.
 map('n', '<leader>w', '<cmd>w<cr>', silent)
@@ -50,3 +53,14 @@ map('n', '<leader>fl', [[<cmd>Telescope live_grep theme=get_dropdown<cr>]], sile
 map('n', '<leader>fk', [[<cmd>Telescope keymaps theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fc', [[<cmd>Telescope commands theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fs', [[<cmd>Telescope colorscheme theme=get_dropdown<cr>]], silent)
+
+-- Indent.
+--- Indent with Tab and Shift-Tab
+map('v', '<Tab>', '>', {})
+map('v', '<S-Tab>', '<', {})
+
+--- Don't leave visual mode after indenting.
+map('v', '>', '>gv^', { noremap = true  })
+map('v', '<', '<gv^', { noremap = true  })
+
+return M
