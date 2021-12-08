@@ -58,7 +58,6 @@ map('n', '<leader>fs', [[<cmd>Telescope colorscheme theme=get_dropdown<cr>]], si
 --- Indent with Tab and Shift-Tab
 map('v', '<Tab>', '>', {})
 map('v', '<S-Tab>', '<', {})
-
 --- Don't leave visual mode after indenting.
 map('v', '>', '>gv^', { noremap = true  })
 map('v', '<', '<gv^', { noremap = true  })
