@@ -64,7 +64,7 @@ require[[config.themes.tokyonight]]
 require[[config.themes.onedark]]
 
 -- Set themes
-cmd "colorscheme onedark"
+cmd "colorscheme tokyonight"
 
 -- Jump to the last position when reopening a file
 cmd([[
