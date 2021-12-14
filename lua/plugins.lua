@@ -92,6 +92,9 @@ return require('packer').startup(function()
         },
         {'nvim-lua/lsp-status.nvim',
          config = [[ require('config.lsp.lspstatus') ]]
+        },
+        {'glepnir/lspsaga.nvim',
+        config = [[ require('config.lsp.lspsaga') ]]
         }
       }
   }
