@@ -17,8 +17,8 @@ dashboard.section.buttons.val = {
     dashboard.button( "SPC c", "  Edit Config" , ':lua telescope_find_files_in_path("~/.config/nvim/")<CR>'),
     dashboard.button( "q", "  Quit NVIM" , ":qa<CR>"),
 }
-local handle = io.popen('fortune')
+--[[ local handle = io.popen('fortune')
 local fortune = handle:read("*a")
 handle:close()
-dashboard.section.footer.val = fortune
+dashboard.section.footer.val = fortune ]]
 alpha.setup(dashboard.opts)
