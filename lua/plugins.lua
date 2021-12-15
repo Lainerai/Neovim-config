@@ -37,11 +37,11 @@ return require('packer').startup(function()
 
   -- Statusline
   use {
-      'famiu/feline.nvim',
-      config = function()
-        require('feline').setup()
-      end
+      'nvim-lualine/lualine.nvim',
+      requires = {'kyazdani42/nvim-web-devicons', opt = true},
+      config = [[ require('config.lualine') ]]
   }
+
 
   -- Colorizer
   use {
