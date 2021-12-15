@@ -11,7 +11,6 @@ dashboard.section.header.val = {
 dashboard.section.buttons.val = {
     dashboard.button( "e", "  New file" , ":ene <BAR> startinsert <CR>"),
     dashboard.button( "SPC f f", "  Find Files" , ":Telescope find_files<CR>"),
-    dashboard.button( "SPC f r", "ﲊ  Frecency/MRU" , ":Telescope frecency<CR>"),
     dashboard.button( "SPC f b", "  File Browser" , ":Telescope file_browser<CR>"),
     dashboard.button( "SPC g", "  Neogit" , ":Neogit<CR>"),
     dashboard.button( "SPC c", "  Edit Config" , ':lua telescope_find_files_in_path("~/.config/nvim/")<CR>'),
