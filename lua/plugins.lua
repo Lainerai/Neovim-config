@@ -148,6 +148,9 @@ return require('packer').startup(function()
   use { 
         'folke/tokyonight.nvim',
         'navarasu/onedark.nvim',
+        {'catppuccin/nvim',
+          as = "catppuccin"
+        }
   }
 
   -- Packer Bootstrap (Put this at the end after all plugins).
