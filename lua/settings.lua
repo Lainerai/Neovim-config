@@ -59,12 +59,8 @@ o.ttimeoutlen = 100
 -- o.characters for after foldtext, eof, foldcolumn
 o.fillchars = "fold: ,foldclose:,foldopen:,foldsep: ,diff: ,eob: "
 
--- Themes
-require[[config.themes.tokyonight]]
-require[[config.themes.onedark]]
-
--- Set themes
-cmd "colorscheme catppuccin"
+-- Set the default theme
+cmd "colorscheme tokyonight"
 
 -- Jump to the last position when reopening a file
 cmd([[
