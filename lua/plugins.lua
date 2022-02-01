@@ -25,9 +25,6 @@ return require('packer').startup(function()
   -- Helpers for UNIX.
   use 'tpope/vim-eunuch'
 
-  -- Live edit
-  use 'turbio/bracey.vim'
-
   -- Nvim Treesitter configurations and abstraction layer
   use {
       'nvim-treesitter/nvim-treesitter',
@@ -41,7 +38,6 @@ return require('packer').startup(function()
       requires = {'kyazdani42/nvim-web-devicons', opt = true},
       config = [[ require('config.lualine') ]]
   }
-
 
   -- Colorizer
   use {
