@@ -25,6 +25,12 @@ return require('packer').startup(function()
   -- Helpers for UNIX
   use 'tpope/vim-eunuch'
 
+  -- Autosave
+  use {
+    'Pocco81/AutoSave.nvim',
+    config = [[ require('config.autosave') ]]
+  }
+
   -- Nvim Treesitter configurations and abstraction layer
   use {
     'nvim-treesitter/nvim-treesitter',
