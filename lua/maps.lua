@@ -42,13 +42,15 @@ map('n', '<S-t>', ':tabnew<CR>', silent)
 
 -- TOOLS --
 --- Terminal.
-map('n', '<leader>tv', ':vnew +terminal | : set nonumber | startinsert <CR>', silent)
-map('n', '<leader>th', ':new +terminal | : set nonumber | startinsert <CR>', silent)
+map('n', '<leader>tv', ':vnew +terminal | :set nonumber | startinsert <CR>', silent)
+map('n', '<leader>th', ':new +terminal | :set nonumber | startinsert <CR>', silent)
 --- Nvimtree.
 map('n', '<leader>e', ':NvimTreeToggle<cr>', options)
 map('n', '<leader>v', ':NvimTreeFocus<cr>', options)
 --- Neogit.
 map('n', '<leader>ga', ':Neogit<cr>', options)
+--- Live-server
+map('n', '<leader>ls', ':terminal live-server <CR> | :bprevious <CR>', options)
 --- Packer.
 map('n', '<leader>u', ':PackerSync<cr>', options)
 --- Telescope.
@@ -59,7 +61,6 @@ map('n', '<leader>fg', [[<cmd>Telescope live_grep theme=get_dropdown<cr>]], sile
 map('n', '<leader>fk', [[<cmd>Telescope keymaps theme=get_dropdown<cr>]], silent)
 map('n', '<leader>fc', [[<cmd>Telescope commands theme=get_dropdown<cr>]], silent)
 map('n', '<leader>ft', [[<cmd>Telescope colorscheme theme=get_dropdown<cr>]], silent)
-
 
 -- MISC --
 --- Toggle line number.
